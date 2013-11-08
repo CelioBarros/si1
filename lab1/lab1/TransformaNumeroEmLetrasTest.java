@@ -36,6 +36,17 @@ public class TransformaNumeroEmLetrasTest {
 			Assert.assertEquals("O mil está errado","mil", transforma.inteirosDeUmaSoPalavra(1000));
 			
 		}
-
-
+		
+	//Comportamento 3
+		@Test
+		public void testaEntradaVazia(){
+			Assert.assertEquals("", transforma.entradaVazia());
+		}
+		
+	//Comportamento 4
+		@Test
+		public void testaEntradaErrada(){
+			Assert.assertEquals("Voce deve colocar apenas numeros.", transforma.entradaErrada());
+		}
+	
 }

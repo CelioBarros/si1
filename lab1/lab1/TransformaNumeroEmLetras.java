@@ -63,5 +63,13 @@ public class TransformaNumeroEmLetras {
 		}
 		return resultadoEmExtenso;
 		
-	}	
+	}
+	
+	public String entradaVazia(){
+		return "";
+	}
+
+	public String entradaErrada() {
+		return "Voce deve colocar apenas numeros.";
+	}
 }
