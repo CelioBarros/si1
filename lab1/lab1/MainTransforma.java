@@ -34,10 +34,10 @@ public class MainTransforma {
 				System.out.println(transforma.MaioresQueVinteEMenoresQueCem(numero));
 			}else if (numero < 1000 ) {
 				System.out.println(transforma.MaioresQueCemEMenoresQueMil(numero));
-			}else if (numero < 2000) {
-				System.out.println(transforma.MaioresQueMilEMenoresQueDoisMil(numero));
 			}else if (numero < 1000000){
-				System.out.println(transforma.MaioresQueDoisMilEMenoresQueMilhao(numero));
+				System.out.println(transforma.MaioresQueMilEMenoresQueMilhao(numero));
+			}else{
+				System.out.println(transforma.NumerosDeMilhoes(numero));
 			}
 		}
 		}
