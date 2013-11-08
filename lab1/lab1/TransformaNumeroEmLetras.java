@@ -84,13 +84,39 @@ public class TransformaNumeroEmLetras {
 		int resto1 = numero%100;
 		int div1 = resto1/10;
 		int resto2 = resto1%10;
-		String resultadoParcial1 = null, resultadoParcial2 = null;
-		resultadoParcial1 = inteirosDeUmaSoPalavraAteCem(div1*10);
+		
+		resultadoEmExtenso = inteirosDeUmaSoPalavraAteCem(div1*10);
+		
 		if(resto2 != 0){
-			resultadoParcial2 = zeroADez(resto2);
+			resultadoEmExtenso += " e " + zeroADez(resto2);
 		}	
 		
-		resultadoEmExtenso = resultadoParcial1 + " e " + resultadoParcial2;
+		return resultadoEmExtenso;
+	}
+
+	public String MaioresQueCemEMenoresQueMil(int numero) {
+		int resto1 = numero%100;
+		int div1 = numero/100;
+		int div2 = resto1/10;
+		int resto2 = resto1%10;
+		
+		if (div1*100 == 100) {
+			resultadoEmExtenso = "cento";
+		} else {
+			resultadoEmExtenso = inteirosDeUmaSoPalavraAteMil(div1*100);
+		}
+		if((resto1>10 && resto1<20) || div2 !=0){
+			if((resto1>10 && resto1<20)){
+				resultadoEmExtenso += " e " + MaioresQueDezEMenoresQueVinte(resto1);
+			}else{
+				resultadoEmExtenso += " e " + inteirosDeUmaSoPalavraAteCem(div2*10);
+			}
+		}
+		
+		if(resto2 != 0 && !(resto1>10 && resto1<20)){
+			resultadoEmExtenso += " e " + zeroADez(resto2);
+		}
+		
 		return resultadoEmExtenso;
 	}
 }

@@ -63,4 +63,17 @@ public class TransformaNumeroEmLetrasTest {
 			Assert.assertEquals("noventa e nove", transforma.MaioresQueVinteEMenoresQueCem(99));
 		}	
 		
+	//Comportamento 6
+		@Test
+		public void testaNumeroDe101a999(){
+			Assert.assertEquals("cento e um", transforma.MaioresQueCemEMenoresQueMil(101));
+			Assert.assertEquals("duzentos e trinta e tres", transforma.MaioresQueCemEMenoresQueMil(233));
+			Assert.assertEquals("quatrocentos e quarenta e cinco", transforma.MaioresQueCemEMenoresQueMil(445));
+			Assert.assertEquals("quinhentos e cinquenta e quatro", transforma.MaioresQueCemEMenoresQueMil(554));
+			Assert.assertEquals("trezentos e dezessete", transforma.MaioresQueCemEMenoresQueMil(317));
+			Assert.assertEquals("setecentos e setenta e dois", transforma.MaioresQueCemEMenoresQueMil(772));
+			Assert.assertEquals("seiscentos e oitenta e sete", transforma.MaioresQueCemEMenoresQueMil(687));
+			Assert.assertEquals("oitocentos e noventa e tres", transforma.MaioresQueCemEMenoresQueMil(893));
+			Assert.assertEquals("novecentos e noventa e nove", transforma.MaioresQueCemEMenoresQueMil(999));
+		}
 }
