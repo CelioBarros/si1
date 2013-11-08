@@ -4,6 +4,11 @@ public class TransformaNumeroEmLetras {
 
 	private String resultadoEmExtenso;
 
+	/**
+	 * Retorna os valores entre zero e dez
+	 * @param numero
+	 * @return
+	 */
 	public String zeroADez(int numero){
 		switch (numero) {
 		case 0: resultadoEmExtenso = "zero";	break;
@@ -21,7 +26,11 @@ public class TransformaNumeroEmLetras {
 		return resultadoEmExtenso;
 		
 	}
-	
+	/**
+	 * Retorna os valores entre dez e vinte
+	 * @param numero
+	 * @return
+	 */
 	public String MaioresQueDezEMenoresQueVinte(int numero){
 		switch (numero) {
 		case 11:	resultadoEmExtenso = "onze";	break;
@@ -38,7 +47,11 @@ public class TransformaNumeroEmLetras {
 		return resultadoEmExtenso;
 		
 	}
-	
+	/**
+	 * Retorna os valores inteiros entre vinte e cem
+	 * @param numero
+	 * @return
+	 */
 	public String inteirosDeUmaSoPalavraAteCem(int numero){
 		switch (numero) {
 		case 20:	resultadoEmExtenso = "vinte"; break;
@@ -53,7 +66,11 @@ public class TransformaNumeroEmLetras {
 		return resultadoEmExtenso;
 		
 	}
-	
+	/**
+	 * Retorna os inteiros de cem a mil
+	 * @param numero
+	 * @return
+	 */
 	public String inteirosDeUmaSoPalavraAteMil(int numero){
 		switch (numero) {
 		case 100:	resultadoEmExtenso = "cem"; break;
@@ -71,15 +88,25 @@ public class TransformaNumeroEmLetras {
 		return resultadoEmExtenso;
 		
 	}
-	
+	/**
+	 * Entrada vazia, nao faz nada
+	 * @return
+	 */
 	public String entradaVazia(){
 		return "";
 	}
-
+	/**
+	 * Entrada sem ser com numeros
+	 * @return
+	 */
 	public String entradaErrada() {
 		return "Voce deve colocar apenas numeros.";
 	}
-
+	/**
+	 * Valores entre vinte e cem
+	 * @param numero
+	 * @return
+	 */
 	public String MaioresQueVinteEMenoresQueCem(int numero) {
 		int resto1 = numero%100;
 		int div1 = resto1/10;
@@ -93,14 +120,18 @@ public class TransformaNumeroEmLetras {
 		
 		return resultadoEmExtenso;
 	}
-
+	/**
+	 * Valores entre cem e mil
+	 * @param numero
+	 * @return
+	 */
 	public String MaioresQueCemEMenoresQueMil(int numero) {
 		int resto1 = numero%100;
 		int div1 = numero/100;
 		int div2 = resto1/10;
 		int resto2 = resto1%10;
 		
-		if (div1*100 == 100) {
+		if (div1*100 == 100 && numero!= 100) {
 			resultadoEmExtenso = "cento";
 		} else {
 			resultadoEmExtenso = inteirosDeUmaSoPalavraAteMil(div1*100);
@@ -119,7 +150,11 @@ public class TransformaNumeroEmLetras {
 		
 		return resultadoEmExtenso;
 	}
-
+	/**
+	 * Valores entre mil e dois mil
+	 * @param numero
+	 * @return
+	 */
 	public String MaioresQueMilEMenoresQueDoisMil(int numero) {
 		resultadoEmExtenso = "mil";
 		int numAux = numero - 1000;
