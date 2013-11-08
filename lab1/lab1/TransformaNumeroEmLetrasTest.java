@@ -76,4 +76,33 @@ public class TransformaNumeroEmLetrasTest {
 			Assert.assertEquals("oitocentos e noventa e tres", transforma.MaioresQueCemEMenoresQueMil(893));
 			Assert.assertEquals("novecentos e noventa e nove", transforma.MaioresQueCemEMenoresQueMil(999));
 		}
+
+	//Comportamento 7
+		@Test
+		public void testaNumeroDe1001a1099(){
+			Assert.assertEquals("mil e um", transforma.MaioresQueMilEMenoresQueDoisMil(1001));
+			Assert.assertEquals("mil e trinta e tres", transforma.MaioresQueMilEMenoresQueDoisMil(1033));
+			Assert.assertEquals("mil e quarenta e cinco", transforma.MaioresQueMilEMenoresQueDoisMil(1045));
+			Assert.assertEquals("mil e cinquenta e quatro", transforma.MaioresQueMilEMenoresQueDoisMil(1054));
+			Assert.assertEquals("mil e sessenta e oito", transforma.MaioresQueMilEMenoresQueDoisMil(1068));
+			Assert.assertEquals("mil e setenta e dois", transforma.MaioresQueMilEMenoresQueDoisMil(1072));
+			Assert.assertEquals("mil e oitenta e sete", transforma.MaioresQueMilEMenoresQueDoisMil(1087));
+			Assert.assertEquals("mil e noventa e nove", transforma.MaioresQueMilEMenoresQueDoisMil(1099));
+		}
+		
+	//Comportamento 8
+		@Test
+		public void testaNumeroDe1100a1999(){
+			Assert.assertEquals("mil e cem", transforma.MaioresQueMilEMenoresQueDoisMil(1100));
+			Assert.assertEquals("mil quinhentos e um", transforma.MaioresQueMilEMenoresQueDoisMil(1501));
+			Assert.assertEquals("mil seiscentos e trinta e tres", transforma.MaioresQueMilEMenoresQueDoisMil(1633));
+			Assert.assertEquals("mil duzentos e quarenta e cinco", transforma.MaioresQueMilEMenoresQueDoisMil(1245));
+			Assert.assertEquals("mil novecentos e cinquenta e quatro", transforma.MaioresQueMilEMenoresQueDoisMil(1954));
+			Assert.assertEquals("mil trezentos e dezessete", transforma.MaioresQueMilEMenoresQueDoisMil(1317));
+			Assert.assertEquals("mil oitocentos e setenta e dois", transforma.MaioresQueMilEMenoresQueDoisMil(1872));
+			Assert.assertEquals("mil setecentos e oitenta e sete", transforma.MaioresQueMilEMenoresQueDoisMil(1787));
+			Assert.assertEquals("mil cento e noventa e tres", transforma.MaioresQueMilEMenoresQueDoisMil(1193));
+			Assert.assertEquals("mil quatrocentos e noventa e nove", transforma.MaioresQueMilEMenoresQueDoisMil(1499));
+			Assert.assertEquals("mil novecentos e noventa e nove", transforma.MaioresQueMilEMenoresQueDoisMil(1999));
+		}
 }

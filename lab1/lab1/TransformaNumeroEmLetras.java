@@ -119,4 +119,25 @@ public class TransformaNumeroEmLetras {
 		
 		return resultadoEmExtenso;
 	}
+
+	public String MaioresQueMilEMenoresQueDoisMil(int numero) {
+		resultadoEmExtenso = "mil";
+		int numAux = numero - 1000;
+			if (numAux < 100) {
+				if (numAux <= 10) {
+					resultadoEmExtenso += " e " + zeroADez(numAux);
+				}else if (numAux < 21) {
+					resultadoEmExtenso += " e " + MaioresQueDezEMenoresQueVinte(numAux);
+				}else{
+					resultadoEmExtenso += " e " + MaioresQueVinteEMenoresQueCem(numAux);
+				}
+			}else{
+				if (numAux == 100) {
+					resultadoEmExtenso += " e cem";
+				}else{
+					resultadoEmExtenso += " " + MaioresQueCemEMenoresQueMil(numAux);
+				}
+			}
+		return resultadoEmExtenso;
+	}
 }
