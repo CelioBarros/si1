@@ -39,7 +39,7 @@ public class TransformaNumeroEmLetras {
 		
 	}
 	
-	public String inteirosDeUmaSoPalavra(int numero){
+	public String inteirosDeUmaSoPalavraAteCem(int numero){
 		switch (numero) {
 		case 20:	resultadoEmExtenso = "vinte"; break;
 		case 30:	resultadoEmExtenso = "trinta"; break;
@@ -49,6 +49,13 @@ public class TransformaNumeroEmLetras {
 		case 70:	resultadoEmExtenso = "setenta"; break;
 		case 80:	resultadoEmExtenso = "oitenta"; break;
 		case 90:	resultadoEmExtenso = "noventa"; break;
+		}
+		return resultadoEmExtenso;
+		
+	}
+	
+	public String inteirosDeUmaSoPalavraAteMil(int numero){
+		switch (numero) {
 		case 100:	resultadoEmExtenso = "cem"; break;
 		case 200:	resultadoEmExtenso = "duzentos"; break;
 		case 300:	resultadoEmExtenso = "trezentos"; break;
@@ -71,5 +78,19 @@ public class TransformaNumeroEmLetras {
 
 	public String entradaErrada() {
 		return "Voce deve colocar apenas numeros.";
+	}
+
+	public String MaioresQueVinteEMenoresQueCem(int numero) {
+		int resto1 = numero%100;
+		int div1 = resto1/10;
+		int resto2 = resto1%10;
+		String resultadoParcial1 = null, resultadoParcial2 = null;
+		resultadoParcial1 = inteirosDeUmaSoPalavraAteCem(div1*10);
+		if(resto2 != 0){
+			resultadoParcial2 = zeroADez(resto2);
+		}	
+		
+		resultadoEmExtenso = resultadoParcial1 + " e " + resultadoParcial2;
+		return resultadoEmExtenso;
 	}
 }

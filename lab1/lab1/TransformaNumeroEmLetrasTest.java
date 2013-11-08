@@ -30,11 +30,12 @@ public class TransformaNumeroEmLetrasTest {
 			Assert.assertEquals("O onze está errado","onze", transforma.MaioresQueDezEMenoresQueVinte(11));
 			Assert.assertEquals("O doze está errado","doze", transforma.MaioresQueDezEMenoresQueVinte(12));
 			Assert.assertEquals("O quinze está errado","quinze", transforma.MaioresQueDezEMenoresQueVinte(15));
-			Assert.assertEquals("O duzentos está errado","duzentos", transforma.inteirosDeUmaSoPalavra(200));
-			Assert.assertEquals("O quinhentos está errado","quinhentos", transforma.inteirosDeUmaSoPalavra(500));
-			Assert.assertEquals("O novecentos está errado","novecentos", transforma.inteirosDeUmaSoPalavra(900));
-			Assert.assertEquals("O mil está errado","mil", transforma.inteirosDeUmaSoPalavra(1000));
-			
+			Assert.assertEquals("O duzentos está errado","duzentos", transforma.inteirosDeUmaSoPalavraAteMil(200));
+			Assert.assertEquals("O quinhentos está errado","quinhentos", transforma.inteirosDeUmaSoPalavraAteMil(500));
+			Assert.assertEquals("O novecentos está errado","novecentos", transforma.inteirosDeUmaSoPalavraAteMil(900));
+			Assert.assertEquals("O mil está errado","mil", transforma.inteirosDeUmaSoPalavraAteMil(1000));
+			Assert.assertEquals("O cinquenta está errado","cinquenta", transforma.inteirosDeUmaSoPalavraAteCem(50));
+			Assert.assertEquals("O trinta está errado","trinta", transforma.inteirosDeUmaSoPalavraAteCem(30));
 		}
 		
 	//Comportamento 3
@@ -49,4 +50,17 @@ public class TransformaNumeroEmLetrasTest {
 			Assert.assertEquals("Voce deve colocar apenas numeros.", transforma.entradaErrada());
 		}
 	
+	//Comportamento 5
+		@Test
+		public void testaNumeroDe21a99(){
+			Assert.assertEquals("vinte e um", transforma.MaioresQueVinteEMenoresQueCem(21));
+			Assert.assertEquals("trinta e tres", transforma.MaioresQueVinteEMenoresQueCem(33));
+			Assert.assertEquals("quarenta e cinco", transforma.MaioresQueVinteEMenoresQueCem(45));
+			Assert.assertEquals("cinquenta e quatro", transforma.MaioresQueVinteEMenoresQueCem(54));
+			Assert.assertEquals("sessenta e oito", transforma.MaioresQueVinteEMenoresQueCem(68));
+			Assert.assertEquals("setenta e dois", transforma.MaioresQueVinteEMenoresQueCem(72));
+			Assert.assertEquals("oitenta e sete", transforma.MaioresQueVinteEMenoresQueCem(87));
+			Assert.assertEquals("noventa e nove", transforma.MaioresQueVinteEMenoresQueCem(99));
+		}	
+		
 }
