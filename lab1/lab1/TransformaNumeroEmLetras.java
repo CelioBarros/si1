@@ -22,7 +22,7 @@ public class TransformaNumeroEmLetras {
 		
 	}
 	
-	public String apenasUmaPalavra(int numero){
+	public String MaioresQueDezEMenoresQueVinte(int numero){
 		switch (numero) {
 		case 11:	resultadoEmExtenso = "onze";	break;
 		case 12:	resultadoEmExtenso = "doze";	break;
@@ -33,6 +33,14 @@ public class TransformaNumeroEmLetras {
 		case 17:	resultadoEmExtenso = "dezessete"; break;
 		case 18:	resultadoEmExtenso = "dezoito"; break;
 		case 19:	resultadoEmExtenso = "dezenove"; break;
+		
+		}
+		return resultadoEmExtenso;
+		
+	}
+	
+	public String inteirosDeUmaSoPalavra(int numero){
+		switch (numero) {
 		case 20:	resultadoEmExtenso = "vinte"; break;
 		case 30:	resultadoEmExtenso = "trinta"; break;
 		case 40:	resultadoEmExtenso = "quarenta"; break;
@@ -51,10 +59,9 @@ public class TransformaNumeroEmLetras {
 		case 800:	resultadoEmExtenso = "oitocentos"; break;
 		case 900:	resultadoEmExtenso = "novecentos"; break;
 		case 1000:	resultadoEmExtenso = "mil"; break;
-		
+	
 		}
 		return resultadoEmExtenso;
 		
-	}
-	
+	}	
 }

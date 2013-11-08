@@ -27,13 +27,13 @@ public class TransformaNumeroEmLetrasTest {
 	//Comportamento 2
 		@Test
 		public void testaNumeroApenasUmaPalavra() {
-			Assert.assertEquals("O onze está errado","onze", transforma.apenasUmaPalavra(11));
-			Assert.assertEquals("O doze está errado","doze", transforma.apenasUmaPalavra(12));
-			Assert.assertEquals("O quinze está errado","quinze", transforma.apenasUmaPalavra(15));
-			Assert.assertEquals("O duzentos está errado","duzentos", transforma.apenasUmaPalavra(200));
-			Assert.assertEquals("O quinhentos está errado","quinhentos", transforma.apenasUmaPalavra(500));
-			Assert.assertEquals("O novecentos está errado","novecentos", transforma.apenasUmaPalavra(900));
-			Assert.assertEquals("O mil está errado","mil", transforma.apenasUmaPalavra(1000));
+			Assert.assertEquals("O onze está errado","onze", transforma.MaioresQueDezEMenoresQueVinte(11));
+			Assert.assertEquals("O doze está errado","doze", transforma.MaioresQueDezEMenoresQueVinte(12));
+			Assert.assertEquals("O quinze está errado","quinze", transforma.MaioresQueDezEMenoresQueVinte(15));
+			Assert.assertEquals("O duzentos está errado","duzentos", transforma.inteirosDeUmaSoPalavra(200));
+			Assert.assertEquals("O quinhentos está errado","quinhentos", transforma.inteirosDeUmaSoPalavra(500));
+			Assert.assertEquals("O novecentos está errado","novecentos", transforma.inteirosDeUmaSoPalavra(900));
+			Assert.assertEquals("O mil está errado","mil", transforma.inteirosDeUmaSoPalavra(1000));
 			
 		}
 
