@@ -111,13 +111,10 @@ public class TransformaNumeroEmLetras {
 		int resto1 = numero%100;
 		int div1 = resto1/10;
 		int resto2 = resto1%10;
-		
 		resultadoEmExtenso = inteirosDeUmaSoPalavraAteCem(div1*10);
-		
 		if(resto2 != 0){
 			resultadoEmExtenso += " e " + zeroADez(resto2);
 		}	
-		
 		return resultadoEmExtenso;
 	}
 	/**
@@ -130,7 +127,6 @@ public class TransformaNumeroEmLetras {
 		int div1 = numero/100;
 		int div2 = resto1/10;
 		int resto2 = resto1%10;
-		
 		if (div1*100 == 100 && numero!= 100) {
 			resultadoEmExtenso = "cento";
 		} else {
@@ -143,7 +139,6 @@ public class TransformaNumeroEmLetras {
 				resultadoEmExtenso += " e " + inteirosDeUmaSoPalavraAteCem(div2*10);
 			}
 		}
-		
 		if(resto2 != 0 && !(resto1>10 && resto1<20)){
 			resultadoEmExtenso += " e " + zeroADez(resto2);
 		}
@@ -174,5 +169,49 @@ public class TransformaNumeroEmLetras {
 				}
 			}
 		return resultadoEmExtenso;
+	}
+	/**
+	 * Entre dois mil e um milhao, incluindo o dois mil
+	 * @param numero
+	 * @return
+	 */
+	public String MaioresQueDoisMilEMenoresQueMilhao(int numero) {
+		int div1 = numero/1000;
+		int resto1 = numero %1000;
+		int numAux = numero - (1000 * div1);
+		if (div1 <=10) {
+			resultadoEmExtenso = zeroADez(div1) + " mil";
+		} else if(div1 <=20){
+			resultadoEmExtenso = MaioresQueDezEMenoresQueVinte(div1) + " mil";
+		}else if(div1 <100){
+			resultadoEmExtenso = MaioresQueVinteEMenoresQueCem(div1) + " mil";
+		}else if(div1 < 1000){
+			resultadoEmExtenso = MaioresQueCemEMenoresQueMil(div1) + " mil";
+		}
+		if (resto1 != 0) {
+			if (numAux < 100) {
+				if (numAux <= 10) {
+					resultadoEmExtenso += " e " + zeroADez(numAux);
+				}else if (numAux < 21) {
+					resultadoEmExtenso += " e " + MaioresQueDezEMenoresQueVinte(numAux);
+				}else{
+					resultadoEmExtenso += " e " + MaioresQueVinteEMenoresQueCem(numAux);
+				}
+			}else{
+				if (numAux == 100) {
+					resultadoEmExtenso += " e cem";
+				}else{
+					resultadoEmExtenso += " " + MaioresQueCemEMenoresQueMil(numAux);
+				}
+			}
+		}
+		return resultadoEmExtenso;
+	}
+	/**
+	 * Um bilhao
+	 * @return
+	 */
+	public String UmBilhao() {
+		return "um bilhao";
 	}
 }
